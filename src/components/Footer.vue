@@ -11,39 +11,32 @@
         class="grey lighten-5 text-center"
       >
         <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4"
-            icon
-          >
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
-          </v-btn>
+          <Icons :icons='icons'></Icons>
         </v-card-text>
-
         <v-divider></v-divider>
-
         <v-card-text class="black--text">
           {{ new Date().getFullYear() }} — <strong>High-Q</strong>
         </v-card-text>
       </v-card>
     </v-footer>
-
   </v-card>
 </template>
 
 <script>
+  import Icons from './Icons'
   export default {
     name: 'Footer',
-    data: () => ({
+    components: {
+      Icons,
+    },
+    data: () =>  {
+      return{
       icons: [
         'mdi-home',
         'mdi-email',
-        'mdi-calendar',
-      ]
-    }),
+        'mdi-calendar', 
+      ]}
+    }
   }
 </script>
 <style lang="scss" scoped>
