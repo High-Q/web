@@ -17,23 +17,44 @@
         <br />
         公式TwitterにてDMで問い合わせください！
       </p>
-      
     </v-row>
-    <Tweet id="783943172057694208"></Tweet>
-
+    <v-row justify="center">
+      <v-card class="mx-auto" max-height="200">
+        <v-container
+          id="scroll-target"
+          style="max-height: 200px"
+          class="overflow-y-auto"
+        >
+          <v-row
+            v-scroll:#scroll-target="onScroll"
+            align="top"
+            justify="center"
+          >
+            <a
+              class="twitter-timeline"
+              href="https://twitter.com/c8w5y?ref_src=twsrc%5Etfw"
+              >Tweets by c8w5y</a
+            >
+          </v-row>
+        </v-container>
+      </v-card>
+    </v-row>
   </v-container>
 </template>
 <script>
-import Tweet from 'vue-tweet-embed'
 export default {
   name: "Activities",
-   component: {
-       Tweet,
-   },
-   data() {
-    return {
-      twitterId: "c8w5y",
-    }
-   }
+  component: {},
+  mounted() {
+    setTimeout(() => {
+      let tweetScript = document.createElement("script");
+      tweetScript.setAttribute(
+        "src",
+        "https://platform.twitter.com/widgets.js"
+      );
+      tweetScript.setAttribute("async", "true");
+      document.head.appendChild(tweetScript);
+    }, 100);
+  },
 };
 </script>
