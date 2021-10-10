@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height>
     <v-row justify="center">
-      <p class="text-center text-h4">Activities</p>
+      <SubTitle title="Activities"></SubTitle>
     </v-row>
     <v-row justify="center">
       <p class="body-1">
@@ -19,34 +19,37 @@
       </p>
     </v-row>
     <v-row justify="center">
-        <v-col cols="10" md="4">
-      <v-card class="mx-auto" max-height="200">
-        <v-container
-          id="scroll-target"
-          style="max-height: 200px"
-          class="overflow-y-auto"
-        >
-          <v-row
-            v-scroll:#scroll-target="onScroll"
-            align="top"
-            justify="center"
+      <v-col cols="10" md="4">
+        <v-card class="mx-auto" max-height="200">
+          <v-container
+            id="scroll-target"
+            style="max-height: 200px"
+            class="overflow-y-auto"
           >
-            <a
-              class="twitter-timeline"
-              href="https://twitter.com/c8w5y?ref_src=twsrc%5Etfw"
-              >Tweets by c8w5y</a
+            <v-row
+              v-scroll:#scroll-target="onScroll"
+              align="top"
+              justify="center"
             >
-          </v-row>
-        </v-container>
-      </v-card>
-       </v-col>
+              <a
+                class="twitter-timeline"
+                href="https://twitter.com/c8w5y?ref_src=twsrc%5Etfw"
+                >Tweets by c8w5y</a
+              >
+            </v-row>
+          </v-container>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
+import SubTitle from "./SubTitle.vue";
 export default {
   name: "Activities",
-  component: {},
+  components: {
+      SubTitle,
+  },
   mounted() {
     setTimeout(() => {
       let tweetScript = document.createElement("script");

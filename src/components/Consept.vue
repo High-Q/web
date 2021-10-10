@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height>
     <v-row justify="center" class="pa-md-16">
-      <p class="text-h4">High-Q's concept</p>
+      <SubTitle title="High-Q's concept"></SubTitle>
     </v-row>
     <v-row no-gutters justify="center">
       <v-col align="center" class="pa-8" cols="12" md="4">
@@ -39,7 +39,11 @@
   </v-container>
 </template>
 <script>
+import SubTitle from "./SubTitle.vue";
 export default {
   name: "Concept",
+  components: {
+    SubTitle,
+  }
 };
 </script>
