@@ -19,6 +19,7 @@
       </p>
     </v-row>
     <v-row justify="center">
+        <v-col cols="10" md="4">
       <v-card class="mx-auto" max-height="200">
         <v-container
           id="scroll-target"
@@ -38,6 +39,7 @@
           </v-row>
         </v-container>
       </v-card>
+       </v-col>
     </v-row>
   </v-container>
 </template>
