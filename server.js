@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 var express = require('express');
 var serveStatic = require("serve-static")
 var path = require('path');
