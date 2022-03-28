@@ -1,6 +1,6 @@
 <template>
   <v-container fluid fill-height>
-    <v-row justify="center">
+    <v-row justify="center" class="pa-md-16">
       <SubTitle title="Activities"></SubTitle>
     </v-row>
     <v-row justify="center">
